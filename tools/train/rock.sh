@@ -43,7 +43,7 @@ mkdir -p $CWS_MODEL_DIR
 mkdir -p $CWS_LOG_DIR
 
 # execute the example training process 
-$CWS_EXE $CWS_CONF_TRAIN_PATH >& $CWS_LOG_TRAIN_PATH
+$CWS_EXE $CWS_CONF_TRAIN_PATH &> $CWS_LOG_TRAIN_PATH
 
 if [ ! -f $CWS_MODEL_PATH ]; then 
     echo "[1] ERROR: CWS model is not detected!"
@@ -70,7 +70,7 @@ POS_EXE=./otpos
 mkdir -p $POS_MODEL_DIR
 mkdir -p $POS_LOG_DIR
 
-$POS_EXE $POS_CONF_TRAIN_PATH >& $POS_LOG_TRAIN_PATH
+$POS_EXE $POS_CONF_TRAIN_PATH &> $POS_LOG_TRAIN_PATH
 
 if [ ! -f $CWS_MODEL_PATH ]; then 
     echo "[2] ERROR: POS model is not detected!"
@@ -99,7 +99,7 @@ mkdir -p $NER_MODEL_DIR
 mkdir -p $NER_LOG_DIR
 
 # execute the example training process 
-$NER_EXE $NER_CONF_TRAIN_PATH >& $NER_LOG_TRAIN_PATH
+$NER_EXE $NER_CONF_TRAIN_PATH &> $NER_LOG_TRAIN_PATH
 
 if [ ! -f $NER_MODEL_PATH ]; then 
     echo "[3] ERROR: NER model is not detected!"
@@ -125,7 +125,7 @@ PARSER_EXE=./lgdpj
 mkdir -p $PARSER_MODEL_DIR
 mkdir -p $PARSER_LOG_DIR
 
-$PARSER_EXE $PARSER_CONF_TRAIN_O1_PATH >& $PARSER_LOG_TRAIN_O1_PATH
+$PARSER_EXE $PARSER_CONF_TRAIN_O1_PATH &> $PARSER_LOG_TRAIN_O1_PATH
 
 if [ ! -f $PARSER_MODEL_O1_PATH ]; then 
     echo "[4.1] ERROR: Parser-o1 model is not detected!"
@@ -148,7 +148,7 @@ PARSER_LOG_TRAIN_O2SIB_PATH=$PARSER_LOG_DIR/example-train.conll
 
 PARSER_EXE=./lgdpj
 
-$PARSER_EXE $PARSER_CONF_TRAIN_O2SIB_PATH >& $PARSER_LOG_TRAIN_O2SIB_PATH
+$PARSER_EXE $PARSER_CONF_TRAIN_O2SIB_PATH &> $PARSER_LOG_TRAIN_O2SIB_PATH
 
 if [ ! -f $PARSER_MODEL_O2SIB_PATH ]; then 
     echo "[4.2] ERROR: Parser-o2sib model is not detected!"
@@ -171,7 +171,7 @@ PARSER_LOG_TRAIN_O2CARRERAS_PATH=$PARSER_LOG_DIR/example-train.conll
 
 PARSER_EXE=./lgdpj
 
-$PARSER_EXE $PARSER_CONF_TRAIN_O2CARRERAS_PATH >& $PARSER_LOG_TRAIN_O2CARRERAS_PATH
+$PARSER_EXE $PARSER_CONF_TRAIN_O2CARRERAS_PATH &> $PARSER_LOG_TRAIN_O2CARRERAS_PATH
 
 if [ ! -f $PARSER_MODEL_O2SIB_PATH ]; then 
     echo "[4.3] ERROR: Parser-o2carreras model is not detected!"
